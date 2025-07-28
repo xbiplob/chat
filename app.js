@@ -27,7 +27,7 @@ import {
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBBY8_NwdMSbt-0RLT3y8S4B0QRaB7i808",
+    apiKey: "AIzaSyBBY8_NwdMSbt-0RLT3y8S4B0QRaB7i808", // TODO: Secure this key using Firebase App Check in production
     authDomain: "weffriend.firebaseapp.com",
     databaseURL: "https://weffriend-default-rtdb.firebaseio.com",
     projectId: "weffriend",
@@ -461,7 +461,7 @@ onAuthStateChanged(auth, async (user) => {
                 setUserOnline();
                 showScreen(chatScreen);
                 setupChatListeners();
-            } else {
+            }  else {
                 showScreen(usernameScreen);
             }
         }, { onlyOnce: true });
