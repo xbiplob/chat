@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeFriend Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen">
+        <div class="login-container">
+            <h1>WeFriend Chat</h1>
+            <p>Connect with friends in real-time</p>
+            <button id="googleSignInBtn" class="google-btn">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+                Sign in with Google
+            </button>
+        </div>
+    </div>
+
+    <!-- Username Setup Screen -->
+    <div id="usernameScreen" class="screen hidden">
+        <div class="username-container">
+            <h2>Choose Your Display Name</h2>
+            <input type="text" id="usernameInput" placeholder="Enter your display name" maxlength="20">
+            <button id="setUsernameBtn">Continue to Chat</button>
+        </div>
+    </div>
+
+    <!-- Chat Screen -->
+    <div id="chatScreen" class="screen hidden">
+        <div class="chat-container">
+            <!-- Header -->
+            <div class="chat-header">
+                <h2>WeFriend Group Chat</h2>
+                <div class="user-info">
+                    <span id="currentUserName"></span>
+                    <div class="online-status" id="onlineStatus"></div>
+                    <button id="logoutBtn">Logout</button>
+                </div>
+            </div>
+
+            <!-- Online Users -->
+            <div class="online-users">
+                <h3>Online Users (<span id="onlineCount">0</span>)</h3>
+                <div id="onlineUsersList"></div>
+            </div>
+
+            <!-- Messages Container -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Messages will be displayed here -->
+            </div>
+
+            <!-- Message Input -->
+            <div class="message-input-container">
+                <input type="file" id="fileInput" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display: none;">
+                <button id="fileBtn" class="file-btn">📎</button>
+                <input type="text" id="messageInput" placeholder="Type your message..." maxlength="500">
+                <button id="sendBtn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Firebase SDK v12 -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
